@@ -4,9 +4,6 @@ function App() {
   return (
     <>
       <Button text="Zora"/>
-      <Button />
-      <Button />
-      <Button />
     </>
   );
 }

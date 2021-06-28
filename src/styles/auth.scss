@@ -3,6 +3,10 @@
   align-items: stretch;
   height: 100vh; //Irá ocupar sempre a altura total da tela
 
+  &.dark {
+    background: #133;
+  }
+
   aside {
     flex: 7;
     background: #835afd;
@@ -31,7 +35,11 @@
       color: #f8f8f8;
     }
   }
-
+  @media only screen and (max-width: 600px) {
+    aside {
+      display: none;
+    }
+  }
   main {
     flex: 8;
 

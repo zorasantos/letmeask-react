@@ -12,7 +12,7 @@ import '../styles/auth.scss';
 
 export function Home() {
   const history = useHistory();
-  const { signInWithGoogle, user } = useAuth();
+  const { signInWithGoogle, signOut, user } = useAuth();
   const [roomCode, setRoomCode] = useState('');
 
   async function handleCreateRoom () {
@@ -50,10 +50,13 @@ export function Home() {
       <main>
         <div className="main-content">
           <img src={logoImg} alt="Letmeask" />
-          <button onClick={handleCreateRoom} className="create-room">
-            <img src={googleIconImg} alt="Logo do Google" />
-            Crie sua sala com o Google
-          </button>
+          {!user ?
+            <button onClick={handleCreateRoom} className="create-room">
+              <img src={googleIconImg} alt="Logo do Google" />
+              Crie sua sala com o Google
+            </button> :
+            <button onClick={signOut} className="create-room">Fazer logout</button>
+          }
           <div className="separator">ou entre em uma sala</div>
           <form onSubmit={handleJoinRoom}>
             <input

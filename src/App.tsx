@@ -6,7 +6,8 @@ import { AdminRoom } from './pages/AdminRoom';
 import { Home } from './pages/Home';
 import { NewRoom } from './pages/NewRoom';
 import { Room } from './pages/Room';
-
+import { TextEditor } from './pages//TextEditor';
+import { ArticleList } from './pages/ArticleList';
 
 function App() {
 
@@ -19,6 +20,8 @@ function App() {
             <Route path="/rooms/new" component={NewRoom} />
             <Route path="/rooms/:id" component={Room} />
             <Route path="/admin/rooms/:id" component={AdminRoom} />
+            <Route path="/editor" component={TextEditor} />
+            <Route path="/article/list" component={ArticleList} />
           </Switch>
         </AuthContextProvider>
       </ThemeContextProvider>

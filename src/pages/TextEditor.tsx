@@ -18,16 +18,16 @@ export function TextEditor() {
     const { title, firsParagraph, secondParagraph, thirdParagraph, fourthParagraph } = formData
     const roomRef = database.ref('articles');
     await roomRef.push({
-      title: title,
-      firsParagraph: firsParagraph,
-      secondParagraph: secondParagraph,
-      thirdParagraph: thirdParagraph,
-      fourthParagraph: fourthParagraph,
       authorId: {
         id: user?.id,
         avatar: user?.avatar,
         name: user?.name,
-      }
+      },
+      fourthParagraph: fourthParagraph,
+      thirdParagraph: thirdParagraph,
+      secondParagraph: secondParagraph,
+      firsParagraph: firsParagraph,
+      title: title
     })
     setFormData({
       title: "",

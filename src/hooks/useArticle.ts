@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 import { database } from "../services/firebase";
 import { useAuth } from "./useAuth";
 
@@ -13,9 +13,10 @@ type ArticleType = {
     secondParagraph: string;
     thirdParagraph: string;
     fourthParagraph: string;
+    id: string;
 }
 
-type FirebaseQuestions = Record<string, {
+type FirebaseArticles = Record<string, {
   authorId: {
     name: string;
     avatar: string;
@@ -28,17 +29,37 @@ type FirebaseQuestions = Record<string, {
     fourthParagraph: string;
 }>
 
-export function useArticle() {
+export function useArticle(articleId?: string) {
   const { user } = useAuth();
   const [articles, setArticles] = useState<ArticleType[]>([]);
+  const [articleById, setArticleById] = useState<SetStateAction<any>>([]);
+
+  useEffect(() => {
+    const articleRef = database.ref(`articles/${articleId}`);
+
+    articleRef.on('value', article => {
+      const databaseArticle = article.val();
+      const firebaseArticles: FirebaseArticles = databaseArticle ?? {};
+
+      const parsedArticle = Object.entries(firebaseArticles).map(([key, value]) => {
+        return {
+          [key]: value
+        }
+      })
+      console.log(parsedArticle, 'parsedArticle')
+      setArticleById(parsedArticle);
+    })
+
+    return () => articleRef.off('value')
+  }, [articleId])
 
   useEffect(() => {
     const roomRef = database.ref(`articles`);
 
     roomRef.on('value', article => {
       const databaseArticle = article.val();
-      const firebaseQuestions: FirebaseQuestions = databaseArticle ?? {};
-      const parsedArticle = Object.entries(firebaseQuestions).map(([key, value]) => {
+      const firebaseArticles: FirebaseArticles = databaseArticle ?? {};
+      const parsedArticle = Object.entries(firebaseArticles).map(([key, value]) => {
         return {
           id: key,
           author: value.authorId,
@@ -49,11 +70,12 @@ export function useArticle() {
           fourthParagraph: value.fourthParagraph,
         }
       })
+      console.log(parsedArticle, 'parsedArticles')
       setArticles(parsedArticle);
     })
 
     return () => roomRef.off('value')
   }, [user?.id])
 
-  return { articles }
+  return { articles, articleById }
 }

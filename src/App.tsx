@@ -8,6 +8,7 @@ import { NewRoom } from './pages/NewRoom';
 import { Room } from './pages/Room';
 import { TextEditor } from './pages//TextEditor';
 import { ArticleList } from './pages/ArticleList';
+import { ArticleById } from './pages/ArticleById';
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
             <Route path="/admin/rooms/:id" component={AdminRoom} />
             <Route path="/editor" component={TextEditor} />
             <Route path="/article/list" component={ArticleList} />
+            <Route path="/articleById/:id" component={ArticleById} />
           </Switch>
         </AuthContextProvider>
       </ThemeContextProvider>

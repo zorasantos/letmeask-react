@@ -11,17 +11,11 @@ export function ArticleById() {
   const { articleById } = useArticle(ArticleId);
   return (
     <div>
-      {articleById.map((item: any) => {
-        return(
-          <div>
-            <h2>{item.title}</h2>
-            <p>{item.firsParagraph}</p>
-            <p>{item.fourthParagraph}</p>
-            <p>{item.secondParagraph}</p>
-            <p>{item.thirdParagraph}</p>
-          </div>
-        );
-      })}
+      <h2>{articleById.title}</h2>
+      <p>{articleById.firsParagraph}</p>
+      <p>{articleById.fourthParagraph}</p>
+      <p>{articleById.secondParagraph}</p>
+      <p>{articleById.thirdParagraph}</p>
     </div>
   );
 }

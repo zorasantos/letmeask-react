@@ -40,14 +40,7 @@ export function useArticle(articleId?: string) {
     articleRef.on('value', article => {
       const databaseArticle = article.val();
       const firebaseArticles: FirebaseArticles = databaseArticle ?? {};
-
-      const parsedArticle = Object.entries(firebaseArticles).map(([key, value]) => {
-        return {
-          [key]: value
-        }
-      })
-      console.log(parsedArticle, 'parsedArticle')
-      setArticleById(parsedArticle);
+      setArticleById(firebaseArticles);
     })
 
     return () => articleRef.off('value')

@@ -8,7 +8,7 @@ import { NewRoom } from './pages/NewRoom';
 import { Room } from './pages/Room';
 import { TextEditor } from './pages//TextEditor';
 import { ArticleList } from './pages/ArticleList';
-import { ArticleById } from './pages/ArticleById';
+import { ArticleById } from './pages/ArticleById/index';
 
 function App() {
 

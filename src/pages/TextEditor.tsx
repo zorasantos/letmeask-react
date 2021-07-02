@@ -3,6 +3,8 @@ import { useAuth } from '../hooks/useAuth';
 import { database } from '../services/firebase';
 import '../styles/text-editor.scss';
 
+import { InputTitle } from './style';
+
 export function TextEditor() {
   const { user } = useAuth();
   const [formData, setFormData] = useState({
@@ -27,7 +29,8 @@ export function TextEditor() {
       thirdParagraph: thirdParagraph,
       secondParagraph: secondParagraph,
       firsParagraph: firsParagraph,
-      title: title
+      title: title,
+      createAt: new Date()
     })
     setFormData({
       title: "",
@@ -46,7 +49,7 @@ export function TextEditor() {
     <div id="text-editor">
       <h2>Novo Artigo</h2>
       <form onSubmit={handleSubmit}>
-        <input
+        <InputTitle
          type="text"
          name="title"
          value={formData.title}

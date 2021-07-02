@@ -63,7 +63,6 @@ export function useArticle(articleId?: string) {
           fourthParagraph: value.fourthParagraph,
         }
       })
-      console.log(parsedArticle, 'parsedArticles')
       setArticles(parsedArticle);
     })
 

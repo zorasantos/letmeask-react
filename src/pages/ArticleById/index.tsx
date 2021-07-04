@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useArticle } from "../../hooks/useArticle";
 
-import { Container } from './style';
+import { Container } from './styles';
 
 type RoomParams = {
   id: string;

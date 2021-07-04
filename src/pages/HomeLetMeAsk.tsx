@@ -10,7 +10,7 @@ import { Button } from '../components/Button';
 
 import '../styles/auth.scss';
 
-export function Home() {
+export function HomeLetMeAsk() {
   const history = useHistory();
   const { signInWithGoogle, signOut, user } = useAuth();
   const [roomCode, setRoomCode] = useState('');

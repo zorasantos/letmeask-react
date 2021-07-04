@@ -1,12 +1,13 @@
-import { ChangeEvent, FormEvent, useState } from 'react';
+import { ChangeEvent, FormEvent, useEffect, useRef, useState } from 'react';
 import { useAuth } from '../hooks/useAuth';
 import { database } from '../services/firebase';
 import '../styles/text-editor.scss';
 
-import { InputTitle } from './style';
+import { InputTitle, TextareaParagraph } from './styles';
 
 export function TextEditor() {
   const { user } = useAuth();
+  const searchInput = useRef<HTMLInputElement>(null);
   const [formData, setFormData] = useState({
     title: "",
     firsParagraph: "",
@@ -42,41 +43,53 @@ export function TextEditor() {
   }
 
   function handleInputChange(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
-    const { name, value } = event.target
+    const { name, value } = event.target;
     setFormData({...formData, [name]: value})
   }
+
+  useEffect(()=>{
+    searchInput.current?.focus();
+ },[])
   return (
     <div id="text-editor">
       <h2>Novo Artigo</h2>
       <form onSubmit={handleSubmit}>
         <InputTitle
+        ref={searchInput}
          type="text"
          name="title"
+         placeholder="Título do artigo"
          value={formData.title}
-         placeholder="Titulo do artigo"
          onChange={handleInputChange}
         />
-        <textarea
+        <TextareaParagraph
           name="firsParagraph"
           id="firsParagraph"
+          rows={10}
           placeholder="Escreva o primeiro paragrafo..."
           value={formData.firsParagraph}
           onChange={handleInputChange}
         />
-        <textarea
+        <TextareaParagraph
           name="secondParagraph"
+          id="secondParagraph"
+          rows={10}
           placeholder="Escreva o segundo paragrafo..."
           value={formData.secondParagraph}
           onChange={handleInputChange}
         />
-        <textarea
+        <TextareaParagraph
           name="thirdParagraph"
+          id="thirdParagraph"
+          rows={10}
           placeholder="Escreva o terceiro paragrafo..."
           value={formData.thirdParagraph}
           onChange={handleInputChange}
         />
-        <textarea
+        <TextareaParagraph
           name="fourthParagraph"
+          id="fourthParagraph"
+          rows={10}
           placeholder="Escreva o quarto paragrafo..."
           value={formData.fourthParagraph}
           onChange={handleInputChange}

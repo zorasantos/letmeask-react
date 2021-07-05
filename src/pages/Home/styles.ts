@@ -1,22 +1,41 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  justify-content: center;
-  height: 100vh;
-  margin: 70px;
+  /* display: flex;
+  flex-direction: column; */
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 950px;
 
-  h1 {
-    color: #D6B7B5;
-    font-size: 50px;
-    font-weight: lighter;
-    font-family: 'Caveat', sans-serif;
-    text-align: center;
+  section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 950px;
+
+    div {
+      display: flex;
+      flex-direction: column;
+
+      max-width: 316px;
+      max-height: 316px;
+    }
+
+    img {
+      border-radius: 50%;
+      height: 290px;
+    }
   }
 
-  h3 {
-    font-weight: 300;
-    margin-bottom: 30px;
-    color: #F5F0ED;
-    text-align: center;
+  .teste {
+    background-color: red;
+    width: 100vw;
+    height: 100vh;
+    margin-bottom: 50px;
   }
+`;
+
+export const PainelHome = styled.img`
+  width: 950px;
+  height: 450px;
 `;

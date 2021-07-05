@@ -8,6 +8,12 @@ export const Container = styled.div`
   height: 100vh;
   margin-left: 50px;
 
+  img {
+    width: 300px;
+    height: 300px;
+    border-radius: 5px;
+  }
+
   @media only screen and (max-width: 800px) {
     display: flex;
     flex-direction: column;
@@ -27,7 +33,7 @@ export const Container = styled.div`
 
     h1 {
       margin-bottom: 10px;
-      color: #D4C6Bd;
+      color: #3D5361;
       font-size: 50px;
       font-weight: lighter;
       font-family: 'Caveat', sans-serif;
@@ -43,7 +49,7 @@ export const Container = styled.div`
       text-align: justify;
       line-height: 25px;
       margin-top: 40px;
-      color: #F5F0ED;
+      color: #3D5361;
     }
   }
 

@@ -12,16 +12,16 @@ export const Container = styled.div`
     margin-right: 50px;
   }
 
-  background: #D4C6Bd;
+  background: #20495b;
   height: 60px;
   width: 100%;
 `;
 
 export const LinkMenu = styled(NavLink)`
-  color: #3D5361;
+  color: #F5F0ED;
   text-decoration: none;
 
   &:hover, &:active {
-    border-bottom: 2px solid #3D5361;
+    border-bottom: 2px solid #F5F0ED;
   }
 `;

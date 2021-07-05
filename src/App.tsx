@@ -1,3 +1,4 @@
+import { Footer } from './components/Footer';
 import { AuthContextProvider } from './contexts/AuthContext';
 import { ThemeContextProvider } from './contexts/ThemeContext';
 import { Routes } from './routes';
@@ -8,6 +9,7 @@ function App() {
     <ThemeContextProvider>
       <AuthContextProvider>
         <Routes />
+        <Footer />
       </AuthContextProvider>
     </ThemeContextProvider>
   );

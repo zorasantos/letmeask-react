@@ -2,28 +2,26 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const Container = styled.div`
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 
-`;
-
-export const Wrapper = styled.div`
-  margin: 50px 50px 0px 0px;
   nav {
     display: flex;
-    justify-content: flex-end;
     gap: 20px;
+    margin-right: 50px;
   }
+
+  background: #D4C6Bd;
+  height: 60px;
+  width: 100%;
 `;
 
 export const LinkMenu = styled(NavLink)`
-  color: #F5F0ED;
+  color: #3D5361;
   text-decoration: none;
 
-  &:hover {
-    color: #D4C6Bd;
-    border-bottom: 2px solid #D4C6Bd;
+  &:hover, &:active {
+    border-bottom: 2px solid #3D5361;
   }
 `;

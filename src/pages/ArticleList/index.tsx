@@ -1,5 +1,5 @@
-import { ArticleCard } from "../components/ArticleCard/index";
-import { useArticle } from "../hooks/useArticle";
+import { ArticleCard } from "../../components/ArticleCard/index";
+import { useArticle } from "../../hooks/useArticle";
 
 export function ArticleList() {
   const { articles } = useArticle();

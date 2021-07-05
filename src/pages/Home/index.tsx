@@ -1,7 +1,11 @@
-import './styles';
+import { Container, Divider } from "./styles";
 
 export function Home() {
   return (
-    <h1>Home</h1>
+    <Container>
+      <h1>Alana Farias</h1>
+      <h3>Psicóloga Clínica</h3>
+      <Divider />
+    </Container>
   );
 }

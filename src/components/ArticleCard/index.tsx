@@ -16,7 +16,7 @@ export function ArticleCard({
   id
 }: ArticleListProps) {
   return(
-    <Container>
+    <Container key={id}>
       <LinkArticle to={`/articleById/${id}`}>
         <h2>{title}</h2>
         <div className="author">

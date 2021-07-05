@@ -1,26 +1,23 @@
-import { Container, Wrapper } from './styles';
-import { NavLink } from 'react-router-dom';
+import { Container, Wrapper, LinkMenu } from './styles';
 
 export function Header() {
   return (
     <Container>
       <Wrapper>
-        <div className="right">
-          <nav>
-            <NavLink to="/">
-              <span>Home</span>
-            </NavLink>
-            <NavLink to="/article/list">
-              <span>Artigos</span>
-            </NavLink>
-            <NavLink to="/about">
-              <span>Sobre</span>
-            </NavLink>
-            <NavLink to="/">
-              <span>Contato</span>
-            </NavLink>
-          </nav>
-        </div>
+        <nav>
+          <LinkMenu to="/">
+            <span>Home</span>
+          </LinkMenu>
+          <LinkMenu to="/article/list">
+            <span>Artigos</span>
+          </LinkMenu>
+          <LinkMenu to="/about">
+            <span>Sobre</span>
+          </LinkMenu>
+          <LinkMenu to="/">
+            <span>Contato</span>
+          </LinkMenu>
+        </nav>
       </Wrapper>
     </Container>
   );

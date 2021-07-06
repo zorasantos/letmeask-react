@@ -4,16 +4,16 @@ export function Header() {
   return (
     <Container>
       <nav>
-        <LinkMenu to="/">
+        <LinkMenu href="/">
           <span>Home</span>
         </LinkMenu>
-        <LinkMenu to="/article/list">
+        <LinkMenu href="/article/list">
           <span>Artigos</span>
         </LinkMenu>
-        <LinkMenu to="/about">
+        <LinkMenu href="/about">
           <span>Sobre</span>
         </LinkMenu>
-        <LinkMenu to="/">
+        <LinkMenu href="/">
           <span>Contato</span>
         </LinkMenu>
       </nav>

@@ -1,41 +1,42 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  /* display: flex;
-  flex-direction: column; */
   margin: 0 auto;
-  margin-top: 20px;
-  width: 950px;
+  margin-top: 100px;
+  width: 1000px;
 
   section {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 950px;
+    width: 1000px;
+    margin-top: 20px;
+
+    gap: 30px;
 
     div {
       display: flex;
       flex-direction: column;
+      align-items: center;
+      align-content: center;
 
-      max-width: 316px;
-      max-height: 316px;
+      h3 {
+        margin: 10px 0px;
+      }
+
+      p {
+        text-align: center;
+      }
+
+      img {
+        border-radius: 50%;
+        height: 290px;
+      }
     }
-
-    img {
-      border-radius: 50%;
-      height: 290px;
-    }
-  }
-
-  .teste {
-    background-color: red;
-    width: 100vw;
-    height: 100vh;
-    margin-bottom: 50px;
   }
 `;
 
 export const PainelHome = styled.img`
-  width: 950px;
-  height: 450px;
+  width: 1000px;
+  height: 500px;
 `;

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
 
 export const Container = styled.div`
+  position: fixed;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -17,7 +17,7 @@ export const Container = styled.div`
   width: 100%;
 `;
 
-export const LinkMenu = styled(NavLink)`
+export const LinkMenu = styled.a`
   color: #F5F0ED;
   text-decoration: none;
 

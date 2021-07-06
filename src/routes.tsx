@@ -8,13 +8,13 @@ import { Room } from './pages/Room';
 import { TextEditor } from './pages//TextEditor';
 import { ArticleById } from './pages/ArticleById/index';
 import { Home } from './pages/Home';
-import { Header } from './components/Header';
+// import { Header } from './components/Header';
 import { ArticleList } from './pages/ArticleList';
 
 export function Routes() {
   return (
     <BrowserRouter>
-      <Header />
+      {/* <Header /> */}
       <Switch>
         <Route path="/" component={Home} exact />
         <Route path="/letmeask" component={HomeLetMeAsk} />
